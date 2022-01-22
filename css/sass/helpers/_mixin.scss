@@ -1,0 +1,42 @@
+@mixin position {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+@mixin  flexrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin  flexcolumn {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin  key($nameanimate) {
+    @keyframes #{$nameanimate} {
+        @content;
+    }
+}
+
+@mixin text {
+    h4{
+        margin: $margintop;
+        color: $colorfontblack;
+        font-size: 25px;
+        @media (max-width : $minmobile) {
+            font-size: 35px;
+        }
+    }
+        span{
+            color: $colorfontblue;
+        }
+}

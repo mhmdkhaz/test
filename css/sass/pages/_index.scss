@@ -1,0 +1,155 @@
+header {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+  justify-items: center;
+  align-items: center;
+  .left-img {
+    position: relative;
+    width: 100%;
+    @media (max-width: $minmobile) {
+      margin-top: 30%;
+    }
+    img {
+      width: 100%;
+      @media (max-width: $minmobile) {
+        display: none;
+      }
+    }
+    .centerText {
+      position: absolute;
+      top: 30%;
+      left: 1%;
+      width: 70%;
+      text-align: center;
+      @media (max-width: $minmobile) {
+        width: 100%;
+      }
+      h1 {
+        z-index: 2;
+        font-weight: 700;
+        line-height: 70px;
+        font-size: 50px;
+        margin-bottom: 20px;
+      }
+      p {
+        color: $colorfontblack;
+        font-weight: 400;
+        line-height: 2;
+      }
+    }
+    .allbtn {
+      @include flexrow;
+      margin: 20px;
+    }
+  }
+  .right-img {
+    @media (max-width: $minmobile) {
+      margin-top: 60%;
+    }
+    img {
+      width: 600px;
+    }
+  }
+}
+
+// start in amazing
+
+.amazing {
+  position: relative;
+  @media (max-width: $minmobile) {
+    left: 50%;
+  }
+  .text {
+    @include flexcolumn;
+    text-align: center;
+    @include text;
+    line-height: 1.8;
+    p {
+      margin: $margintop;
+      font-size: 20px;
+      line-height: 40px;
+      font-weight: 300;
+      text-align: center;
+      @media (max-width: $minmobile) {
+        font-size: 25px;
+      }
+    }
+    .back {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+  .all-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+    .box {
+      transition: all 0.1s linear;
+      background-color: $colorwhite;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      width: 100%;
+      padding: $padingelement;
+      border-top-right-radius: $radius;
+      transition: all 0.5s linear;
+      &:hover {
+        background-image: url(../images/service-bg.jpg);
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: $colorwhite;
+      }
+      &:hover .text-button a {
+        color: $colorwhite;
+      }
+      h4 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        margin-top: $margintop;
+      }
+      p {
+        font-size: $fontsize;
+        line-height: 30px;
+        font-weight: 300;
+        width: 100%;
+        text-align: start;
+      }
+      .text-button {
+        margin-top: $margintop;
+        a {
+          text-decoration: none;
+          color: $colorfontblue;
+          i {
+            animation: mymove 0.7s infinite;
+            position: relative;
+            margin-left: 8px;
+            @include key(mymove){
+                0%{
+                    right: 0px;
+                }
+                50%{
+                    right: 5px;
+                }
+                100%{
+
+                    right: 0px;
+                }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.about {
+  .text-about {
+    margin-top: 200px;
+    h1 {
+      @include text;
+    }
+  }
+}
